@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders dashboard column 1`] = `
+<div
+  className="dashboard__column"
+>
+  <div
+    className="dashboard__column-title"
+  >
+    Test name
+  </div>
+  <div
+    className="dashboard__column-content"
+  >
+    <DashboardCell
+      applicant={
+        Object {
+          "login": Object {
+            "uuid": "5d204000-387b-4741-8ba9-7c121ae6adab",
+          },
+        }
+      }
+      key="5d204000-387b-4741-8ba9-7c121ae6adab"
+    />
+    <DashboardCell
+      applicant={
+        Object {
+          "login": Object {
+            "uuid": "40fdd877-b7f1-47bd-8c6b-8b2129bbf3fd",
+          },
+        }
+      }
+      key="40fdd877-b7f1-47bd-8c6b-8b2129bbf3fd"
+    />
+    <DashboardCell
+      applicant={
+        Object {
+          "login": Object {
+            "uuid": "674ed62e-a5f2-42a1-9ba8-2c00c3671801",
+          },
+        }
+      }
+      key="674ed62e-a5f2-42a1-9ba8-2c00c3671801"
+    />
+  </div>
+</div>
+`;
+
+exports[`Renders empty dashboard column 1`] = `
+<div
+  className="dashboard__column"
+>
+  <div
+    className="dashboard__column-title"
+  >
+    Test name
+  </div>
+  <div
+    className="dashboard__column-content"
+  />
+</div>
+`;

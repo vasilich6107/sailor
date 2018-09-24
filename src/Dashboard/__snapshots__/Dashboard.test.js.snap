@@ -1,0 +1,893 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders dashboard and filters applicants Filter by name and country 1`] = `
+<Fragment>
+  <div
+    className="filter"
+  >
+    <div
+      className="filter__item"
+    >
+      <div>
+        Name
+      </div>
+      <div>
+        <input
+          id="nameInput"
+          onChange={[Function]}
+          placeholder="First or Last name"
+          type="text"
+          value="fr"
+        />
+      </div>
+    </div>
+    <div
+      className="filter__item"
+    >
+      <div>
+        Country
+      </div>
+      <div>
+        <input
+          id="cityInput"
+          onChange={[Function]}
+          placeholder="Country"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    className="dashboard"
+  >
+    <DashboardColumn
+      applicants={
+        Array [
+          Object {
+            "location": Object {
+              "city": "bath",
+            },
+            "login": Object {
+              "uuid": "5d204000-387b-4741-8ba9-7c121ae6adab",
+            },
+            "name": Object {
+              "first": "francis",
+              "last": "stewart",
+              "title": "mr",
+            },
+            "picture": Object {
+              "large": "https://randomuser.me/api/portraits/men/15.jpg",
+              "medium": "https://randomuser.me/api/portraits/med/men/15.jpg",
+              "thumbnail": "https://randomuser.me/api/portraits/thumb/men/15.jpg",
+            },
+            "state": "APPLIED",
+          },
+        ]
+      }
+      columnName="APPLIED"
+      key="APPLIED"
+      onNext={[Function]}
+    />
+    <DashboardColumn
+      applicants={Array []}
+      columnName="INTERVIEWING"
+      key="INTERVIEWING"
+      onNext={[Function]}
+      onPrevious={[Function]}
+    />
+    <DashboardColumn
+      applicants={Array []}
+      columnName="HIRED"
+      key="HIRED"
+      onPrevious={[Function]}
+    />
+  </div>
+</Fragment>
+`;
+
+exports[`Renders dashboard and filters applicants Filter by name and country 2`] = `
+<Fragment>
+  <div
+    className="filter"
+  >
+    <div
+      className="filter__item"
+    >
+      <div>
+        Name
+      </div>
+      <div>
+        <input
+          id="nameInput"
+          onChange={[Function]}
+          placeholder="First or Last name"
+          type="text"
+          value="fr"
+        />
+      </div>
+    </div>
+    <div
+      className="filter__item"
+    >
+      <div>
+        Country
+      </div>
+      <div>
+        <input
+          id="cityInput"
+          onChange={[Function]}
+          placeholder="Country"
+          type="text"
+          value="ba"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    className="dashboard"
+  >
+    <DashboardColumn
+      applicants={
+        Array [
+          Object {
+            "location": Object {
+              "city": "bath",
+            },
+            "login": Object {
+              "uuid": "5d204000-387b-4741-8ba9-7c121ae6adab",
+            },
+            "name": Object {
+              "first": "francis",
+              "last": "stewart",
+              "title": "mr",
+            },
+            "picture": Object {
+              "large": "https://randomuser.me/api/portraits/men/15.jpg",
+              "medium": "https://randomuser.me/api/portraits/med/men/15.jpg",
+              "thumbnail": "https://randomuser.me/api/portraits/thumb/men/15.jpg",
+            },
+            "state": "APPLIED",
+          },
+        ]
+      }
+      columnName="APPLIED"
+      key="APPLIED"
+      onNext={[Function]}
+    />
+    <DashboardColumn
+      applicants={Array []}
+      columnName="INTERVIEWING"
+      key="INTERVIEWING"
+      onNext={[Function]}
+      onPrevious={[Function]}
+    />
+    <DashboardColumn
+      applicants={Array []}
+      columnName="HIRED"
+      key="HIRED"
+      onPrevious={[Function]}
+    />
+  </div>
+</Fragment>
+`;
+
+exports[`Renders dashboard and filters applicants Resets filters 1`] = `
+<Fragment>
+  <div
+    className="filter"
+  >
+    <div
+      className="filter__item"
+    >
+      <div>
+        Name
+      </div>
+      <div>
+        <input
+          id="nameInput"
+          onChange={[Function]}
+          placeholder="First or Last name"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      className="filter__item"
+    >
+      <div>
+        Country
+      </div>
+      <div>
+        <input
+          id="cityInput"
+          onChange={[Function]}
+          placeholder="Country"
+          type="text"
+          value="ba"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    className="dashboard"
+  >
+    <DashboardColumn
+      applicants={
+        Array [
+          Object {
+            "location": Object {
+              "city": "bath",
+            },
+            "login": Object {
+              "uuid": "5d204000-387b-4741-8ba9-7c121ae6adab",
+            },
+            "name": Object {
+              "first": "francis",
+              "last": "stewart",
+              "title": "mr",
+            },
+            "picture": Object {
+              "large": "https://randomuser.me/api/portraits/men/15.jpg",
+              "medium": "https://randomuser.me/api/portraits/med/men/15.jpg",
+              "thumbnail": "https://randomuser.me/api/portraits/thumb/men/15.jpg",
+            },
+            "state": "APPLIED",
+          },
+        ]
+      }
+      columnName="APPLIED"
+      key="APPLIED"
+      onNext={[Function]}
+    />
+    <DashboardColumn
+      applicants={Array []}
+      columnName="INTERVIEWING"
+      key="INTERVIEWING"
+      onNext={[Function]}
+      onPrevious={[Function]}
+    />
+    <DashboardColumn
+      applicants={Array []}
+      columnName="HIRED"
+      key="HIRED"
+      onPrevious={[Function]}
+    />
+  </div>
+</Fragment>
+`;
+
+exports[`Renders dashboard and filters applicants Resets filters 2`] = `
+<Fragment>
+  <div
+    className="filter"
+  >
+    <div
+      className="filter__item"
+    >
+      <div>
+        Name
+      </div>
+      <div>
+        <input
+          id="nameInput"
+          onChange={[Function]}
+          placeholder="First or Last name"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      className="filter__item"
+    >
+      <div>
+        Country
+      </div>
+      <div>
+        <input
+          id="cityInput"
+          onChange={[Function]}
+          placeholder="Country"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    className="dashboard"
+  >
+    <DashboardColumn
+      applicants={
+        Array [
+          Object {
+            "location": Object {
+              "city": "bath",
+            },
+            "login": Object {
+              "uuid": "5d204000-387b-4741-8ba9-7c121ae6adab",
+            },
+            "name": Object {
+              "first": "francis",
+              "last": "stewart",
+              "title": "mr",
+            },
+            "picture": Object {
+              "large": "https://randomuser.me/api/portraits/men/15.jpg",
+              "medium": "https://randomuser.me/api/portraits/med/men/15.jpg",
+              "thumbnail": "https://randomuser.me/api/portraits/thumb/men/15.jpg",
+            },
+            "state": "APPLIED",
+          },
+          Object {
+            "location": Object {
+              "city": "nottingham",
+            },
+            "login": Object {
+              "uuid": "40fdd877-b7f1-47bd-8c6b-8b2129bbf3fd",
+            },
+            "name": Object {
+              "first": "harvey",
+              "last": "clarke",
+              "title": "mr",
+            },
+            "picture": Object {
+              "large": "https://randomuser.me/api/portraits/men/15.jpg",
+              "medium": "https://randomuser.me/api/portraits/med/men/15.jpg",
+              "thumbnail": "https://randomuser.me/api/portraits/thumb/men/15.jpg",
+            },
+            "state": "APPLIED",
+          },
+          Object {
+            "location": Object {
+              "city": "coventry",
+            },
+            "login": Object {
+              "uuid": "674ed62e-a5f2-42a1-9ba8-2c00c3671801",
+            },
+            "name": Object {
+              "first": "mia",
+              "last": "white",
+              "title": "mr",
+            },
+            "picture": Object {
+              "large": "https://randomuser.me/api/portraits/men/15.jpg",
+              "medium": "https://randomuser.me/api/portraits/med/men/15.jpg",
+              "thumbnail": "https://randomuser.me/api/portraits/thumb/men/15.jpg",
+            },
+            "state": "APPLIED",
+          },
+        ]
+      }
+      columnName="APPLIED"
+      key="APPLIED"
+      onNext={[Function]}
+    />
+    <DashboardColumn
+      applicants={Array []}
+      columnName="INTERVIEWING"
+      key="INTERVIEWING"
+      onNext={[Function]}
+      onPrevious={[Function]}
+    />
+    <DashboardColumn
+      applicants={Array []}
+      columnName="HIRED"
+      key="HIRED"
+      onPrevious={[Function]}
+    />
+  </div>
+</Fragment>
+`;
+
+exports[`Renders dashboard and move applicant between columns 1`] = `
+<Fragment>
+  <div
+    className="filter"
+  >
+    <div
+      className="filter__item"
+    >
+      <div>
+        Name
+      </div>
+      <div>
+        <input
+          id="nameInput"
+          onChange={[Function]}
+          placeholder="First or Last name"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      className="filter__item"
+    >
+      <div>
+        Country
+      </div>
+      <div>
+        <input
+          id="cityInput"
+          onChange={[Function]}
+          placeholder="Country"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    className="dashboard"
+  >
+    <DashboardColumn
+      applicants={
+        Array [
+          Object {
+            "location": Object {
+              "city": "nottingham",
+            },
+            "login": Object {
+              "uuid": "40fdd877-b7f1-47bd-8c6b-8b2129bbf3fd",
+            },
+            "name": Object {
+              "first": "harvey",
+              "last": "clarke",
+              "title": "mr",
+            },
+            "picture": Object {
+              "large": "https://randomuser.me/api/portraits/men/15.jpg",
+              "medium": "https://randomuser.me/api/portraits/med/men/15.jpg",
+              "thumbnail": "https://randomuser.me/api/portraits/thumb/men/15.jpg",
+            },
+            "state": "APPLIED",
+          },
+          Object {
+            "location": Object {
+              "city": "coventry",
+            },
+            "login": Object {
+              "uuid": "674ed62e-a5f2-42a1-9ba8-2c00c3671801",
+            },
+            "name": Object {
+              "first": "mia",
+              "last": "white",
+              "title": "mr",
+            },
+            "picture": Object {
+              "large": "https://randomuser.me/api/portraits/men/15.jpg",
+              "medium": "https://randomuser.me/api/portraits/med/men/15.jpg",
+              "thumbnail": "https://randomuser.me/api/portraits/thumb/men/15.jpg",
+            },
+            "state": "APPLIED",
+          },
+        ]
+      }
+      columnName="APPLIED"
+      key="APPLIED"
+      onNext={[Function]}
+    />
+    <DashboardColumn
+      applicants={
+        Array [
+          Object {
+            "location": Object {
+              "city": "bath",
+            },
+            "login": Object {
+              "uuid": "5d204000-387b-4741-8ba9-7c121ae6adab",
+            },
+            "name": Object {
+              "first": "francis",
+              "last": "stewart",
+              "title": "mr",
+            },
+            "picture": Object {
+              "large": "https://randomuser.me/api/portraits/men/15.jpg",
+              "medium": "https://randomuser.me/api/portraits/med/men/15.jpg",
+              "thumbnail": "https://randomuser.me/api/portraits/thumb/men/15.jpg",
+            },
+            "state": "INTERVIEWING",
+          },
+        ]
+      }
+      columnName="INTERVIEWING"
+      key="INTERVIEWING"
+      onNext={[Function]}
+      onPrevious={[Function]}
+    />
+    <DashboardColumn
+      applicants={Array []}
+      columnName="HIRED"
+      key="HIRED"
+      onPrevious={[Function]}
+    />
+  </div>
+</Fragment>
+`;
+
+exports[`Renders dashboard and move applicant between columns 2`] = `
+<Fragment>
+  <div
+    className="filter"
+  >
+    <div
+      className="filter__item"
+    >
+      <div>
+        Name
+      </div>
+      <div>
+        <input
+          id="nameInput"
+          onChange={[Function]}
+          placeholder="First or Last name"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      className="filter__item"
+    >
+      <div>
+        Country
+      </div>
+      <div>
+        <input
+          id="cityInput"
+          onChange={[Function]}
+          placeholder="Country"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    className="dashboard"
+  >
+    <DashboardColumn
+      applicants={
+        Array [
+          Object {
+            "location": Object {
+              "city": "nottingham",
+            },
+            "login": Object {
+              "uuid": "40fdd877-b7f1-47bd-8c6b-8b2129bbf3fd",
+            },
+            "name": Object {
+              "first": "harvey",
+              "last": "clarke",
+              "title": "mr",
+            },
+            "picture": Object {
+              "large": "https://randomuser.me/api/portraits/men/15.jpg",
+              "medium": "https://randomuser.me/api/portraits/med/men/15.jpg",
+              "thumbnail": "https://randomuser.me/api/portraits/thumb/men/15.jpg",
+            },
+            "state": "APPLIED",
+          },
+          Object {
+            "location": Object {
+              "city": "coventry",
+            },
+            "login": Object {
+              "uuid": "674ed62e-a5f2-42a1-9ba8-2c00c3671801",
+            },
+            "name": Object {
+              "first": "mia",
+              "last": "white",
+              "title": "mr",
+            },
+            "picture": Object {
+              "large": "https://randomuser.me/api/portraits/men/15.jpg",
+              "medium": "https://randomuser.me/api/portraits/med/men/15.jpg",
+              "thumbnail": "https://randomuser.me/api/portraits/thumb/men/15.jpg",
+            },
+            "state": "APPLIED",
+          },
+        ]
+      }
+      columnName="APPLIED"
+      key="APPLIED"
+      onNext={[Function]}
+    />
+    <DashboardColumn
+      applicants={Array []}
+      columnName="INTERVIEWING"
+      key="INTERVIEWING"
+      onNext={[Function]}
+      onPrevious={[Function]}
+    />
+    <DashboardColumn
+      applicants={
+        Array [
+          Object {
+            "location": Object {
+              "city": "bath",
+            },
+            "login": Object {
+              "uuid": "5d204000-387b-4741-8ba9-7c121ae6adab",
+            },
+            "name": Object {
+              "first": "francis",
+              "last": "stewart",
+              "title": "mr",
+            },
+            "picture": Object {
+              "large": "https://randomuser.me/api/portraits/men/15.jpg",
+              "medium": "https://randomuser.me/api/portraits/med/men/15.jpg",
+              "thumbnail": "https://randomuser.me/api/portraits/thumb/men/15.jpg",
+            },
+            "state": "HIRED",
+          },
+        ]
+      }
+      columnName="HIRED"
+      key="HIRED"
+      onPrevious={[Function]}
+    />
+  </div>
+</Fragment>
+`;
+
+exports[`Renders dashboard and move applicant between columns 3`] = `
+<Fragment>
+  <div
+    className="filter"
+  >
+    <div
+      className="filter__item"
+    >
+      <div>
+        Name
+      </div>
+      <div>
+        <input
+          id="nameInput"
+          onChange={[Function]}
+          placeholder="First or Last name"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      className="filter__item"
+    >
+      <div>
+        Country
+      </div>
+      <div>
+        <input
+          id="cityInput"
+          onChange={[Function]}
+          placeholder="Country"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    className="dashboard"
+  >
+    <DashboardColumn
+      applicants={
+        Array [
+          Object {
+            "location": Object {
+              "city": "bath",
+            },
+            "login": Object {
+              "uuid": "5d204000-387b-4741-8ba9-7c121ae6adab",
+            },
+            "name": Object {
+              "first": "francis",
+              "last": "stewart",
+              "title": "mr",
+            },
+            "picture": Object {
+              "large": "https://randomuser.me/api/portraits/men/15.jpg",
+              "medium": "https://randomuser.me/api/portraits/med/men/15.jpg",
+              "thumbnail": "https://randomuser.me/api/portraits/thumb/men/15.jpg",
+            },
+            "state": "APPLIED",
+          },
+          Object {
+            "location": Object {
+              "city": "nottingham",
+            },
+            "login": Object {
+              "uuid": "40fdd877-b7f1-47bd-8c6b-8b2129bbf3fd",
+            },
+            "name": Object {
+              "first": "harvey",
+              "last": "clarke",
+              "title": "mr",
+            },
+            "picture": Object {
+              "large": "https://randomuser.me/api/portraits/men/15.jpg",
+              "medium": "https://randomuser.me/api/portraits/med/men/15.jpg",
+              "thumbnail": "https://randomuser.me/api/portraits/thumb/men/15.jpg",
+            },
+            "state": "APPLIED",
+          },
+          Object {
+            "location": Object {
+              "city": "coventry",
+            },
+            "login": Object {
+              "uuid": "674ed62e-a5f2-42a1-9ba8-2c00c3671801",
+            },
+            "name": Object {
+              "first": "mia",
+              "last": "white",
+              "title": "mr",
+            },
+            "picture": Object {
+              "large": "https://randomuser.me/api/portraits/men/15.jpg",
+              "medium": "https://randomuser.me/api/portraits/med/men/15.jpg",
+              "thumbnail": "https://randomuser.me/api/portraits/thumb/men/15.jpg",
+            },
+            "state": "APPLIED",
+          },
+        ]
+      }
+      columnName="APPLIED"
+      key="APPLIED"
+      onNext={[Function]}
+    />
+    <DashboardColumn
+      applicants={Array []}
+      columnName="INTERVIEWING"
+      key="INTERVIEWING"
+      onNext={[Function]}
+      onPrevious={[Function]}
+    />
+    <DashboardColumn
+      applicants={Array []}
+      columnName="HIRED"
+      key="HIRED"
+      onPrevious={[Function]}
+    />
+  </div>
+</Fragment>
+`;
+
+exports[`Renders dashboard in Loading state 1`] = `
+<div>
+  Loading
+</div>
+`;
+
+exports[`Renders dashboard with error 1`] = `
+<div>
+  Network error
+</div>
+`;
+
+exports[`Renders dashboard with loaded data 1`] = `
+<Fragment>
+  <div
+    className="filter"
+  >
+    <div
+      className="filter__item"
+    >
+      <div>
+        Name
+      </div>
+      <div>
+        <input
+          id="nameInput"
+          onChange={[Function]}
+          placeholder="First or Last name"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      className="filter__item"
+    >
+      <div>
+        Country
+      </div>
+      <div>
+        <input
+          id="cityInput"
+          onChange={[Function]}
+          placeholder="Country"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    className="dashboard"
+  >
+    <DashboardColumn
+      applicants={
+        Array [
+          Object {
+            "location": Object {
+              "city": "bath",
+            },
+            "login": Object {
+              "uuid": "5d204000-387b-4741-8ba9-7c121ae6adab",
+            },
+            "name": Object {
+              "first": "francis",
+              "last": "stewart",
+              "title": "mr",
+            },
+            "picture": Object {
+              "large": "https://randomuser.me/api/portraits/men/15.jpg",
+              "medium": "https://randomuser.me/api/portraits/med/men/15.jpg",
+              "thumbnail": "https://randomuser.me/api/portraits/thumb/men/15.jpg",
+            },
+            "state": "APPLIED",
+          },
+          Object {
+            "location": Object {
+              "city": "nottingham",
+            },
+            "login": Object {
+              "uuid": "40fdd877-b7f1-47bd-8c6b-8b2129bbf3fd",
+            },
+            "name": Object {
+              "first": "harvey",
+              "last": "clarke",
+              "title": "mr",
+            },
+            "picture": Object {
+              "large": "https://randomuser.me/api/portraits/men/15.jpg",
+              "medium": "https://randomuser.me/api/portraits/med/men/15.jpg",
+              "thumbnail": "https://randomuser.me/api/portraits/thumb/men/15.jpg",
+            },
+            "state": "APPLIED",
+          },
+          Object {
+            "location": Object {
+              "city": "coventry",
+            },
+            "login": Object {
+              "uuid": "674ed62e-a5f2-42a1-9ba8-2c00c3671801",
+            },
+            "name": Object {
+              "first": "mia",
+              "last": "white",
+              "title": "mr",
+            },
+            "picture": Object {
+              "large": "https://randomuser.me/api/portraits/men/15.jpg",
+              "medium": "https://randomuser.me/api/portraits/med/men/15.jpg",
+              "thumbnail": "https://randomuser.me/api/portraits/thumb/men/15.jpg",
+            },
+            "state": "APPLIED",
+          },
+        ]
+      }
+      columnName="APPLIED"
+      key="APPLIED"
+    />
+    <DashboardColumn
+      applicants={Array []}
+      columnName="INTERVIEWING"
+      key="INTERVIEWING"
+    />
+    <DashboardColumn
+      applicants={Array []}
+      columnName="HIRED"
+      key="HIRED"
+    />
+  </div>
+</Fragment>
+`;

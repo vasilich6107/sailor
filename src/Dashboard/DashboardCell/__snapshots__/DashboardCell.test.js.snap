@@ -1,0 +1,197 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders dashboard cell 1`] = `
+<div
+  className="dashboard__cell"
+>
+  <div
+    className="applicant"
+  >
+    <div
+      className="applicant__picture"
+    >
+      <img
+        alt="francis"
+        src="https://randomuser.me/api/portraits/med/men/15.jpg"
+      />
+    </div>
+    <div
+      className="applicant__data"
+    >
+      <div>
+        First name: 
+        francis
+      </div>
+      <div>
+        Last name: 
+        stewart
+      </div>
+      <div>
+        Country: 
+        bath
+      </div>
+    </div>
+  </div>
+  <div
+    className="dashboard__cell-controls"
+  >
+    <div />
+    <div />
+  </div>
+</div>
+`;
+
+exports[`Renders dashboard cell with "next" button 1`] = `
+<div
+  className="dashboard__cell"
+>
+  <div
+    className="applicant"
+  >
+    <div
+      className="applicant__picture"
+    >
+      <img
+        alt="francis"
+        src="https://randomuser.me/api/portraits/med/men/15.jpg"
+      />
+    </div>
+    <div
+      className="applicant__data"
+    >
+      <div>
+        First name: 
+        francis
+      </div>
+      <div>
+        Last name: 
+        stewart
+      </div>
+      <div>
+        Country: 
+        bath
+      </div>
+    </div>
+  </div>
+  <div
+    className="dashboard__cell-controls"
+  >
+    <div />
+    <div>
+      <button
+        id="next"
+        onClick={[Function]}
+        type="button"
+      >
+        ›
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Renders dashboard cell with "previous" button 1`] = `
+<div
+  className="dashboard__cell"
+>
+  <div
+    className="applicant"
+  >
+    <div
+      className="applicant__picture"
+    >
+      <img
+        alt="francis"
+        src="https://randomuser.me/api/portraits/med/men/15.jpg"
+      />
+    </div>
+    <div
+      className="applicant__data"
+    >
+      <div>
+        First name: 
+        francis
+      </div>
+      <div>
+        Last name: 
+        stewart
+      </div>
+      <div>
+        Country: 
+        bath
+      </div>
+    </div>
+  </div>
+  <div
+    className="dashboard__cell-controls"
+  >
+    <div>
+      <button
+        id="previous"
+        onClick={[Function]}
+        type="button"
+      >
+        ‹
+      </button>
+    </div>
+    <div />
+  </div>
+</div>
+`;
+
+exports[`Renders dashboard cell with both buttons 1`] = `
+<div
+  className="dashboard__cell"
+>
+  <div
+    className="applicant"
+  >
+    <div
+      className="applicant__picture"
+    >
+      <img
+        alt="francis"
+        src="https://randomuser.me/api/portraits/med/men/15.jpg"
+      />
+    </div>
+    <div
+      className="applicant__data"
+    >
+      <div>
+        First name: 
+        francis
+      </div>
+      <div>
+        Last name: 
+        stewart
+      </div>
+      <div>
+        Country: 
+        bath
+      </div>
+    </div>
+  </div>
+  <div
+    className="dashboard__cell-controls"
+  >
+    <div>
+      <button
+        id="previous"
+        onClick={[Function]}
+        type="button"
+      >
+        ‹
+      </button>
+    </div>
+    <div>
+      <button
+        id="next"
+        onClick={[Function]}
+        type="button"
+      >
+        ›
+      </button>
+    </div>
+  </div>
+</div>
+`;

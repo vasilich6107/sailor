@@ -1,3 +1,4 @@
+// @flow
 import React, { PureComponent, Fragment } from 'react';
 import DashboardColumn from './DashboardColumn';
 import { APPLICANT_STATES } from '../constants';
@@ -5,6 +6,8 @@ import { APPLICANT_STATES } from '../constants';
 import './Dashboard.css';
 
 export const DASHBOARD_COLUMNS = [APPLICANT_STATES.APPLIED, APPLICANT_STATES.INTERVIEWING, APPLICANT_STATES.HIRED];
+
+const filterIndexOf = (subject, needle) => (needle ? subject.indexOf(needle) !== -1 : true);
 
 class Dashboard extends PureComponent {
   state = {
@@ -19,36 +22,6 @@ class Dashboard extends PureComponent {
     },
   };
 
-  fetchData = fetch('https://randomuser.me/api/?nat=gb&results=5')
-    .then(response => response.json())
-    .then(({ results }) => {
-      const data = results.reduce((acc, applicant) => {
-        acc[applicant.login.uuid] = {
-          ...applicant,
-          state: APPLICANT_STATES.APPLIED,
-        };
-
-        return acc;
-      }, {});
-
-      this.setState(previousState => ({
-        applicants: {
-          ...previousState.applicants,
-          loading: false,
-          data,
-        },
-      }));
-    })
-    .catch(error => {
-      this.setState(previousState => ({
-        applicants: {
-          ...previousState.applicants,
-          loading: false,
-          error,
-        },
-      }));
-    });
-
   componentDidMount() {
     this.setState(
       previousState => ({
@@ -57,22 +30,56 @@ class Dashboard extends PureComponent {
           loading: true,
         },
       }),
-      () => this.fetchData
+      this.fetchData
     );
   }
 
-  getDashboardApplicants = () => {
-    const applicants = Object.values(this.state.applicants.data);
+  fetchData = () =>
+    fetch('https://randomuser.me/api/?nat=gb&results=5&seed=56308e5db1a68b03')
+      .then(response => response.json())
+      .then(({ results }) => {
+        const data = results.reduce((acc, applicant) => {
+          acc[applicant.login.uuid] = {
+            ...applicant,
+            state: APPLICANT_STATES.APPLIED,
+          };
+
+          return acc;
+        }, {});
+
+        this.setState(previousState => ({
+          applicants: {
+            ...previousState.applicants,
+            loading: false,
+            data,
+          },
+        }));
+      })
+      .catch(error => {
+        this.setState(previousState => ({
+          applicants: {
+            ...previousState.applicants,
+            loading: false,
+            error,
+          },
+        }));
+      });
+
+  isVisible = applicant => {
     const { filter } = this.state;
 
-    const filterIndexOf = (subject, needle) => (needle ? subject.indexOf(needle) !== -1 : true);
+    return (
+      (filterIndexOf(applicant.name.first, filter.name) || filterIndexOf(applicant.name.last, filter.name)) &&
+      filterIndexOf(applicant.location.city, this.state.filter.city)
+    );
+  };
+
+  getDashboardApplicants = () => {
+    const applicants = Object.values(this.state.applicants.data);
 
     return applicants.reduce(
       (acc, applicant) => {
-        if (
-          (filterIndexOf(applicant.name.first, filter.name) || filterIndexOf(applicant.name.last, filter.name)) &&
-          filterIndexOf(applicant.location.city, this.state.filter.city)
-        ) {
+        if (this.isVisible(applicant)) {
           acc[applicant.state].push(applicant);
         }
 
@@ -106,7 +113,7 @@ class Dashboard extends PureComponent {
   };
 
   handleFilterChange = name => ({ target: { value } }) => {
-    localStorage.setItem('nameFilter', value);
+    localStorage.setItem(`${name}Filter`, value);
 
     this.setState(prevState => ({
       filter: {
@@ -125,14 +132,22 @@ class Dashboard extends PureComponent {
         key={column}
         columnName={column}
         applicants={applicants[column]}
-        ff={nextState && this.handleApplicantStateChange(nextState)}
-        rev={prevState && this.handleApplicantStateChange(prevState)}
+        onNext={nextState && this.handleApplicantStateChange(nextState)}
+        onPrevious={prevState && this.handleApplicantStateChange(prevState)}
       />
     );
   };
 
   render() {
     const { applicants, filter } = this.state;
+
+    if (applicants.loading) {
+      return <div>Loading</div>;
+    }
+
+    if (applicants.error) {
+      return <div>{applicants.error.message}</div>;
+    }
 
     if (!applicants.data) {
       return null;
@@ -147,6 +162,7 @@ class Dashboard extends PureComponent {
             <div>Name</div>
             <div>
               <input
+                id="nameInput"
                 type="text"
                 placeholder="First or Last name"
                 value={filter.name}
@@ -157,7 +173,13 @@ class Dashboard extends PureComponent {
           <div className="filter__item">
             <div>Country</div>
             <div>
-              <input type="text" placeholder="Country" value={filter.city} onChange={this.handleFilterChange('city')} />
+              <input
+                id="cityInput"
+                type="text"
+                placeholder="Country"
+                value={filter.city}
+                onChange={this.handleFilterChange('city')}
+              />
             </div>
           </div>
         </div>

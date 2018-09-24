@@ -2,7 +2,7 @@ import React from 'react';
 
 import './DashboardCell.css';
 
-const DashboardCell = ({ applicant, rev, ff }) => (
+const DashboardCell = ({ applicant, onPrevious, onNext }) => (
   <div className="dashboard__cell">
     <div className="applicant">
       <div className="applicant__picture">
@@ -16,16 +16,16 @@ const DashboardCell = ({ applicant, rev, ff }) => (
     </div>
     <div className="dashboard__cell-controls">
       <div>
-        {rev && (
-          <button type="button" onClick={() => rev(applicant.login.uuid)}>
+        {onPrevious && (
+          <button id="previous" type="button" onClick={() => onPrevious(applicant.login.uuid)}>
             &#8249;
           </button>
         )}
       </div>
 
       <div>
-        {ff && (
-          <button type="button" onClick={() => ff(applicant.login.uuid)}>
+        {onNext && (
+          <button id="next" type="button" onClick={() => onNext(applicant.login.uuid)}>
             &#8250;
           </button>
         )}
