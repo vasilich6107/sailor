@@ -1,0 +1,31 @@
+.dashboard__cell {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 15px;
+    min-width: 300px;
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard__cell-controls {
+    display: flex;
+    justify-content: space-between;
+}
+
+.dashboard__cell-controls button {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.applicant {
+    display: flex;
+    flex-direction: row;
+    align-self: flex-start;
+}
+
+.applicant__picture IMG {
+    border-radius: 50%;
+    margin: 0 15px;
+}

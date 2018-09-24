@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders without crashing 1`] = `
+exports[`Renders main app with dashboard 1`] = `
 <div
   className="App"
 >
@@ -18,14 +18,6 @@ exports[`renders without crashing 1`] = `
       OpenOceanStudio: Crew Applications
     </h1>
   </header>
-  <p
-    className="App-intro"
-  >
-    To get started, edit 
-    <code>
-      src/App.js
-    </code>
-     and save to reload.
-  </p>
+  <Dashboard />
 </div>
 `;

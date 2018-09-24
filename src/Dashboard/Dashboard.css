@@ -1,0 +1,13 @@
+.dashboard {
+    display: flex;
+}
+
+.filter {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px;
+}
+
+.filter__item {
+    display: flex;
+}

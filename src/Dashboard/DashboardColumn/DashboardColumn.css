@@ -1,0 +1,16 @@
+.dashboard__column  {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-basis: 0;
+}
+
+.dashboard__column-title  {
+    font-weight: bold;
+}
+
+.dashboard__column-content  {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
