@@ -4,12 +4,25 @@ import DashboardColumn from './DashboardColumn';
 import { APPLICANT_STATES } from '../constants';
 
 import './Dashboard.css';
+import type { Applicant, ApplicantData } from '../types/Applicant';
+import type { DashboardApplicants, DashboardColumns, DashboardFilter } from '../types/Dashboard';
 
-export const DASHBOARD_COLUMNS = [APPLICANT_STATES.APPLIED, APPLICANT_STATES.INTERVIEWING, APPLICANT_STATES.HIRED];
+export const DASHBOARD_COLUMNS: Array<string> = [
+  APPLICANT_STATES.APPLIED,
+  APPLICANT_STATES.INTERVIEWING,
+  APPLICANT_STATES.HIRED,
+];
 
-const filterIndexOf = (subject, needle) => (needle ? subject.indexOf(needle) !== -1 : true);
+const filterIndexOf = (subject: string, needle: string): boolean => (needle ? subject.indexOf(needle) !== -1 : true);
 
-class Dashboard extends PureComponent {
+type Props = {};
+
+type State = {
+  filter: DashboardFilter,
+  applicants: ApplicantData,
+};
+
+class Dashboard extends PureComponent<Props, State> {
   state = {
     filter: {
       name: localStorage.getItem('nameFilter') || '',
@@ -17,12 +30,12 @@ class Dashboard extends PureComponent {
     },
     applicants: {
       loading: false,
-      data: null,
+      data: {},
       error: null,
     },
   };
 
-  componentDidMount() {
+  componentDidMount(): void {
     this.setState(
       previousState => ({
         applicants: {
@@ -65,7 +78,7 @@ class Dashboard extends PureComponent {
         }));
       });
 
-  isVisible = applicant => {
+  isVisible = (applicant: Applicant): boolean => {
     const { filter } = this.state;
 
     return (
@@ -75,10 +88,10 @@ class Dashboard extends PureComponent {
   };
 
   getDashboardApplicants = () => {
-    const applicants = Object.values(this.state.applicants.data);
+    const applicants: Array<Applicant> = (Object.values(this.state.applicants.data): Array<any>);
 
     return applicants.reduce(
-      (acc, applicant) => {
+      (acc, applicant: Applicant) => {
         if (this.isVisible(applicant)) {
           acc[applicant.state].push(applicant);
         }
@@ -93,7 +106,7 @@ class Dashboard extends PureComponent {
     );
   };
 
-  handleApplicantStateChange = newState => uuid => {
+  handleApplicantStateChange = (newState: string) => (uuid: string) => {
     this.setState(({ applicants }) => {
       const data = {
         ...applicants.data,
@@ -112,7 +125,10 @@ class Dashboard extends PureComponent {
     });
   };
 
-  handleFilterChange = name => ({ target: { value } }) => {
+  handleFilterChange = (name: string) => (e: SyntheticInputEvent<HTMLInputElement>): void => {
+    const {
+      target: { value },
+    } = e;
     localStorage.setItem(`${name}Filter`, value);
 
     this.setState(prevState => ({
@@ -123,9 +139,9 @@ class Dashboard extends PureComponent {
     }));
   };
 
-  renderColumn = applicants => (column, index, source) => {
-    const nextState = source[index + 1];
-    const prevState = source[index - 1];
+  renderColumn = (applicants: DashboardApplicants) => (column: string, index: number, source: DashboardColumns) => {
+    const nextState: string = source[index + 1];
+    const prevState: string = source[index - 1];
 
     return (
       <DashboardColumn
@@ -147,10 +163,6 @@ class Dashboard extends PureComponent {
 
     if (applicants.error) {
       return <div>{applicants.error.message}</div>;
-    }
-
-    if (!applicants.data) {
-      return null;
     }
 
     const dashboardApplicants = this.getDashboardApplicants();

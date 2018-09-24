@@ -1,5 +1,4 @@
 import React from 'react';
-import nock from 'nock';
 import { shallow } from 'enzyme';
 import Dashboard from './Dashboard';
 import { APPLICANT_STATES } from '../constants';
@@ -67,23 +66,21 @@ const applicants = {
   ],
 };
 
-const localStorageMock = (() => {
-  let store = {};
-  return {
-    getItem(key) {
-      return store[key] || null;
-    },
-    setItem(key, value) {
-      store[key] = value.toString();
-    },
-    removeItem(key) {
-      delete store[key];
-    },
-    clear() {
-      store = {};
-    },
-  };
-})();
+let storeMock = {};
+const localStorageMock = (() => ({
+  getItem(key) {
+    return storeMock[key] || null;
+  },
+  setItem(key, value) {
+    storeMock[key] = value.toString();
+  },
+  removeItem(key) {
+    delete storeMock[key];
+  },
+  clear() {
+    storeMock = {};
+  },
+}))();
 
 const fetchSuccess = jest.fn().mockImplementation(
   () =>
@@ -164,18 +161,30 @@ describe('Renders dashboard and filters applicants', () => {
   });
 
   it('Filter by name and country', () => {
-    component.find('#nameInput').simulate('change', { target: { value: 'fr' } });
+    const nameValue = 'fr';
+    const cityValue = 'ba';
+
+    component.find('#nameInput').simulate('change', { target: { value: nameValue } });
     expect(component).toMatchSnapshot();
 
-    component.find('#cityInput').simulate('change', { target: { value: 'ba' } });
+    component.find('#cityInput').simulate('change', { target: { value: cityValue } });
     expect(component).toMatchSnapshot();
+
+    expect(storeMock.nameFilter).toBe(nameValue);
+    expect(storeMock.cityFilter).toBe(cityValue);
   });
 
   it('Resets filters', async () => {
-    component.find('#nameInput').simulate('change', { target: { value: '' } });
+    const nameValue = '';
+    const cityValue = '';
+
+    component.find('#nameInput').simulate('change', { target: { value: nameValue } });
     expect(component).toMatchSnapshot();
 
-    component.find('#cityInput').simulate('change', { target: { value: '' } });
+    component.find('#cityInput').simulate('change', { target: { value: cityValue } });
     expect(component).toMatchSnapshot();
+
+    expect(storeMock.nameFilter).toBe(nameValue);
+    expect(storeMock.cityFilter).toBe(cityValue);
   });
 });
