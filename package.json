@@ -1,0 +1,39 @@
+{
+  "name": "sailor",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-scripts": "1.1.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom --watchAll",
+    "eject": "react-scripts eject"
+  },
+  "description": "test task",
+  "main": "index.js",
+  "author": "vasilich6107",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-eslint": "9.0.0",
+    "eslint": "5.6.0",
+    "eslint-config-airbnb": "17.1.0",
+    "eslint-config-prettier": "3.1.0",
+    "eslint-plugin-graphql": "2.1.1",
+    "eslint-plugin-import": "2.14.0",
+    "eslint-plugin-jsx-a11y": "6.1.1",
+    "eslint-plugin-prettier": "2.6.2",
+    "eslint-plugin-react": "7.11.1",
+    "prettier": "1.14.3",
+    "enzyme": "^3.4.0",
+    "enzyme-adapter-react-16": "^1.2.0",
+    "enzyme-to-json": "^3.3.4",
+    "react-test-renderer": "^16.4.2"
+  },
+  "jest": {
+    "snapshotSerializers": ["enzyme-to-json/serializer"]
+  }
+}
