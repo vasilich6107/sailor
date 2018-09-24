@@ -3,7 +3,7 @@
     "browser": true
   },
   "parser": "babel-eslint",
-  "extends": ["airbnb", "prettier"],
+  "extends": ["airbnb", "prettier", "plugin:flowtype/recommended"],
   "rules": {
     "prettier/prettier": [
       "error",
@@ -32,5 +32,5 @@
     "react/destructuring-assignment": 0,
     "react/jsx-filename-extension": ["error", { "extensions": [".js", ".jsx"] }]
   },
-  "plugins": ["react", "import", "prettier"]
+  "plugins": ["flowtype", "react", "import", "prettier"]
 }

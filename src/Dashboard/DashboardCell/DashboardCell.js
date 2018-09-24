@@ -1,8 +1,16 @@
+// @flow
 import React from 'react';
+import type { Applicant } from '../../types/Applicant';
 
 import './DashboardCell.css';
 
-const DashboardCell = ({ applicant, onPrevious, onNext }) => (
+type Props = {
+  applicant: Applicant,
+  onNext: (uuid: string) => void,
+  onPrevious: (uuid: string) => void,
+};
+
+const DashboardCell = ({ applicant, onPrevious, onNext }: Props) => (
   <div className="dashboard__cell">
     <div className="applicant">
       <div className="applicant__picture">
