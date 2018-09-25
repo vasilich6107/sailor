@@ -5,7 +5,8 @@ import { APPLICANT_STATES } from '../constants';
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
-jest.mock('./DashboardColumn', () => 'DashboardColumn');
+jest.mock('./DashboardFilter', () => 'DashboardFilter');
+jest.mock('./DashboardTable', () => 'DashboardTable');
 
 const applicants = {
   results: [
@@ -115,25 +116,6 @@ it('Renders dashboard with error', async () => {
   expect(component).toMatchSnapshot();
 });
 
-it('Renders dashboard with loaded data', async () => {
-  global.fetch = fetchSuccess;
-
-  const handleApplicantStateChangeMock = jest.fn();
-
-  const component = shallow(<Dashboard />);
-  component.instance().handleApplicantStateChange = handleApplicantStateChangeMock;
-  await sleep(100);
-
-  expect(component).toMatchSnapshot();
-
-  expect(handleApplicantStateChangeMock.mock.calls.length).toBe(4);
-
-  expect(handleApplicantStateChangeMock.mock.calls[0][0]).toBe(APPLICANT_STATES.INTERVIEWING);
-  expect(handleApplicantStateChangeMock.mock.calls[1][0]).toBe(APPLICANT_STATES.HIRED);
-  expect(handleApplicantStateChangeMock.mock.calls[2][0]).toBe(APPLICANT_STATES.APPLIED);
-  expect(handleApplicantStateChangeMock.mock.calls[3][0]).toBe(APPLICANT_STATES.INTERVIEWING);
-});
-
 it('Renders dashboard and move applicant between columns', async () => {
   global.fetch = fetchSuccess;
 
@@ -150,41 +132,22 @@ it('Renders dashboard and move applicant between columns', async () => {
   expect(component).toMatchSnapshot();
 });
 
-describe('Renders dashboard and filters applicants', () => {
-  let component;
+it('Filter by name and country', async () => {
+  global.fetch = fetchSuccess;
 
-  beforeAll(async () => {
-    global.fetch = fetchSuccess;
-    component = shallow(<Dashboard />);
+  const component = shallow(<Dashboard />);
+  await sleep(100);
 
-    await sleep(100);
-  });
+  const nameValue = 'fr';
+  const cityValue = 'ba';
 
-  it('Filter by name and country', () => {
-    const nameValue = 'fr';
-    const cityValue = 'ba';
+  component.instance().handleFilterChange('name')({ target: { value: nameValue } });
+  component.instance().handleFilterChange('city')({ target: { value: cityValue } });
 
-    component.find('#nameInput').simulate('change', { target: { value: nameValue } });
-    expect(component).toMatchSnapshot();
+  expect(component.instance().state.filter.name).toBe(nameValue);
+  expect(component.instance().state.filter.city).toBe(cityValue);
 
-    component.find('#cityInput').simulate('change', { target: { value: cityValue } });
-    expect(component).toMatchSnapshot();
-
-    expect(storeMock.nameFilter).toBe(nameValue);
-    expect(storeMock.cityFilter).toBe(cityValue);
-  });
-
-  it('Resets filters', async () => {
-    const nameValue = '';
-    const cityValue = '';
-
-    component.find('#nameInput').simulate('change', { target: { value: nameValue } });
-    expect(component).toMatchSnapshot();
-
-    component.find('#cityInput').simulate('change', { target: { value: cityValue } });
-    expect(component).toMatchSnapshot();
-
-    expect(storeMock.nameFilter).toBe(nameValue);
-    expect(storeMock.cityFilter).toBe(cityValue);
-  });
+  expect(storeMock.nameFilter).toBe(nameValue);
+  expect(storeMock.cityFilter).toBe(cityValue);
 });
+

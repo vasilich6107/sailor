@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders dashboard column 1`] = `
+<div
+  className="dashboard"
+>
+  <DashboardColumn
+    applicants={
+      Array [
+        Object {
+          "name": Object {
+            "first": "francis",
+            "last": "stewart",
+            "title": "mr",
+          },
+        },
+      ]
+    }
+    columnName="APPLIED"
+    key="APPLIED"
+    onNext={[Function]}
+  />
+  <DashboardColumn
+    applicants={
+      Array [
+        Object {
+          "name": Object {
+            "first": "harvey",
+            "last": "clarke",
+            "title": "mr",
+          },
+        },
+      ]
+    }
+    columnName="INTERVIEWING"
+    key="INTERVIEWING"
+    onNext={[Function]}
+    onPrevious={[Function]}
+  />
+  <DashboardColumn
+    applicants={
+      Array [
+        Object {
+          "name": Object {
+            "first": "mia",
+            "last": "white",
+            "title": "mr",
+          },
+        },
+      ]
+    }
+    columnName="HIRED"
+    key="HIRED"
+    onPrevious={[Function]}
+  />
+</div>
+`;

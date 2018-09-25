@@ -1,15 +1,15 @@
 // @flow
 import React from 'react';
 import DashboardCell from '../DashboardCell';
-import type { Applicant } from '../../types/Applicant';
+import type { ApplicantType } from '../../types/Applicant';
 
 import './DashboardColumn.css';
 
 type Props = {
-  columnName: number,
-  applicants: Array<Applicant>,
-  onNext: (uuid: string) => void,
-  onPrevious: (uuid: string) => void,
+  columnName: string,
+  applicants: Array<ApplicantType>,
+  onNext: string | ((uuid: string) => void),
+  onPrevious: string | ((uuid: string) => void),
 };
 
 const DashboardColumn = ({ columnName, applicants, ...props }: Props) => (

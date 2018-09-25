@@ -1,11 +1,11 @@
 // @flow
 import React, { PureComponent, Fragment } from 'react';
-import DashboardColumn from './DashboardColumn';
 import { APPLICANT_STATES } from '../constants';
 
-import './Dashboard.css';
-import type { Applicant, ApplicantData } from '../types/Applicant';
-import type { DashboardApplicants, DashboardColumns, DashboardFilter } from '../types/Dashboard';
+import type { ApplicantType, ApplicantDataType } from '../types/Applicant';
+import type { DashboardFilterType } from '../types/Dashboard';
+import DashboardTable from './DashboardTable';
+import DashboardFilter from './DashboardFilter';
 
 export const DASHBOARD_COLUMNS: Array<string> = [
   APPLICANT_STATES.APPLIED,
@@ -18,8 +18,8 @@ const filterIndexOf = (subject: string, needle: string): boolean => (needle ? su
 type Props = {};
 
 type State = {
-  filter: DashboardFilter,
-  applicants: ApplicantData,
+  filter: DashboardFilterType,
+  applicants: ApplicantDataType,
 };
 
 class Dashboard extends PureComponent<Props, State> {
@@ -78,7 +78,7 @@ class Dashboard extends PureComponent<Props, State> {
         }));
       });
 
-  isVisible = (applicant: Applicant): boolean => {
+  isVisible = (applicant: ApplicantType): boolean => {
     const { filter } = this.state;
 
     return (
@@ -88,10 +88,10 @@ class Dashboard extends PureComponent<Props, State> {
   };
 
   getDashboardApplicants = () => {
-    const applicants: Array<Applicant> = (Object.values(this.state.applicants.data): Array<any>);
+    const applicants: Array<ApplicantType> = (Object.values(this.state.applicants.data): Array<any>);
 
     return applicants.reduce(
-      (acc, applicant: Applicant) => {
+      (acc, applicant: ApplicantType) => {
         if (this.isVisible(applicant)) {
           acc[applicant.state].push(applicant);
         }
@@ -139,21 +139,6 @@ class Dashboard extends PureComponent<Props, State> {
     }));
   };
 
-  renderColumn = (applicants: DashboardApplicants) => (column: string, index: number, source: DashboardColumns) => {
-    const nextState: string = source[index + 1];
-    const prevState: string = source[index - 1];
-
-    return (
-      <DashboardColumn
-        key={column}
-        columnName={column}
-        applicants={applicants[column]}
-        onNext={nextState && this.handleApplicantStateChange(nextState)}
-        onPrevious={prevState && this.handleApplicantStateChange(prevState)}
-      />
-    );
-  };
-
   render() {
     const { applicants, filter } = this.state;
 
@@ -165,37 +150,14 @@ class Dashboard extends PureComponent<Props, State> {
       return <div>{applicants.error.message}</div>;
     }
 
-    const dashboardApplicants = this.getDashboardApplicants();
-
     return (
       <Fragment>
-        <div className="filter">
-          <div className="filter__item">
-            <div>Name</div>
-            <div>
-              <input
-                id="nameInput"
-                type="text"
-                placeholder="First or Last name"
-                value={filter.name}
-                onChange={this.handleFilterChange('name')}
-              />
-            </div>
-          </div>
-          <div className="filter__item">
-            <div>Country</div>
-            <div>
-              <input
-                id="cityInput"
-                type="text"
-                placeholder="Country"
-                value={filter.city}
-                onChange={this.handleFilterChange('city')}
-              />
-            </div>
-          </div>
-        </div>
-        <div className="dashboard">{DASHBOARD_COLUMNS.map(this.renderColumn(dashboardApplicants))}</div>
+        <DashboardFilter initialValues={filter} onFilterChange={this.handleFilterChange} />
+        <DashboardTable
+          columnOrder={DASHBOARD_COLUMNS}
+          applicants={this.getDashboardApplicants()}
+          onStateChange={this.handleApplicantStateChange}
+        />
       </Fragment>
     );
   }

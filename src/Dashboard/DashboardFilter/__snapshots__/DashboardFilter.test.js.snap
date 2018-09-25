@@ -1,0 +1,196 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders filter and calls the onChange function 1`] = `
+<div
+  className="filter"
+>
+  <div
+    className="filter__item"
+  >
+    <div>
+      Name
+    </div>
+    <div>
+      <input
+        id="nameInput"
+        onChange={[Function]}
+        placeholder="First or Last name"
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+  <div
+    className="filter__item"
+  >
+    <div>
+      Country
+    </div>
+    <div>
+      <input
+        id="cityInput"
+        onChange={[Function]}
+        placeholder="Country"
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Renders filter and calls the onChange function 2`] = `
+<div
+  className="filter"
+>
+  <div
+    className="filter__item"
+  >
+    <div>
+      Name
+    </div>
+    <div>
+      <input
+        id="nameInput"
+        onChange={[Function]}
+        placeholder="First or Last name"
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+  <div
+    className="filter__item"
+  >
+    <div>
+      Country
+    </div>
+    <div>
+      <input
+        id="cityInput"
+        onChange={[Function]}
+        placeholder="Country"
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Renders filter and calls the onChange function 3`] = `
+<div
+  className="filter"
+>
+  <div
+    className="filter__item"
+  >
+    <div>
+      Name
+    </div>
+    <div>
+      <input
+        id="nameInput"
+        onChange={[Function]}
+        placeholder="First or Last name"
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+  <div
+    className="filter__item"
+  >
+    <div>
+      Country
+    </div>
+    <div>
+      <input
+        id="cityInput"
+        onChange={[Function]}
+        placeholder="Country"
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Renders filter with empty initial values 1`] = `
+<div
+  className="filter"
+>
+  <div
+    className="filter__item"
+  >
+    <div>
+      Name
+    </div>
+    <div>
+      <input
+        id="nameInput"
+        onChange={[Function]}
+        placeholder="First or Last name"
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+  <div
+    className="filter__item"
+  >
+    <div>
+      Country
+    </div>
+    <div>
+      <input
+        id="cityInput"
+        onChange={[Function]}
+        placeholder="Country"
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Renders filter with prefilled initial values 1`] = `
+<div
+  className="filter"
+>
+  <div
+    className="filter__item"
+  >
+    <div>
+      Name
+    </div>
+    <div>
+      <input
+        id="nameInput"
+        onChange={[Function]}
+        placeholder="First or Last name"
+        type="text"
+        value="some"
+      />
+    </div>
+  </div>
+  <div
+    className="filter__item"
+  >
+    <div>
+      Country
+    </div>
+    <div>
+      <input
+        id="cityInput"
+        onChange={[Function]}
+        placeholder="Country"
+        type="text"
+        value="city"
+      />
+    </div>
+  </div>
+</div>
+`;
