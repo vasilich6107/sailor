@@ -13,7 +13,12 @@
     - Page layout `<App />`
     - `<Dashboard* />` components which contains all dashboard logic splitted between separate small components
 - With help of `enzyme` and `jest` I achieved 100% coverage of all components. Run `yarn test --coverage` to check.
-- Added `flow` types.     
+- Added `flow` types.
+
+## Further improvements
+I improved components structure a little bit in separate branch cause it was way behind the time limitations
+
+https://github.com/vasilich6107/sailor/tree/feature/further-improvements     
 
 ### Constraints
 
