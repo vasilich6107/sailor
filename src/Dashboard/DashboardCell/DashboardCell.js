@@ -1,11 +1,11 @@
 // @flow
 import React from 'react';
-import type { Applicant } from '../../types/Applicant';
+import type { ApplicantType } from '../../types/Applicant';
 
 import './DashboardCell.css';
 
 type Props = {
-  applicant: Applicant,
+  applicant: ApplicantType,
   onNext: (uuid: string) => void,
   onPrevious: (uuid: string) => void,
 };

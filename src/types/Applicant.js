@@ -2,30 +2,30 @@
 
 import type { Data } from './Data';
 
-type ApplicantName = {
+type ApplicantNameType = {
   first: string,
   last: string,
   title: string,
 };
 
-type ApplicantLogin = {
+type ApplicantLoginType = {
   uuid: string,
 };
 
-type ApplicantPicture = {
+type ApplicantPictureType = {
   medium: string,
 };
 
-type ApplicantLocation = {
+type ApplicantLocationType = {
   city: string,
 };
 
-export type Applicant = {
-  name: ApplicantName,
-  location: ApplicantLocation,
-  picture: ApplicantPicture,
-  login: ApplicantLogin,
+export type ApplicantType = {
+  name: ApplicantNameType,
+  location: ApplicantLocationType,
+  picture: ApplicantPictureType,
+  login: ApplicantLoginType,
   state: string,
 };
 
-export type ApplicantData = Data<Applicant>;
+export type ApplicantDataType = Data<ApplicantType>;
